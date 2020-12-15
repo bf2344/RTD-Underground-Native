@@ -11,6 +11,7 @@ import ScheduleButtons from './components/NavButtons'
 const Stack = createStackNavigator();
 
 const App = () => {
+  
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">

@@ -1,10 +1,34 @@
-import React from 'react'
-import { StyleSheet, View, Text, Button, Image, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect } from 'react'
+import * as Location from 'expo-location';
+import { StyleSheet, View, Text, Button, Image, TouchableOpacity, Platform} from 'react-native';
 import FooterTicker from '../components/FooterTicker';
 import NavButtons from '../components/NavButtons'
 
 
 const HomeScreen = ({ navigation }) => {
+    const [location, setLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    })();
+  }, []);
+
+  let text = 'Waiting..';
+  if (errorMsg) {
+    text = errorMsg;
+  } else if (location) {
+    text = JSON.stringify(location);
+    console.log(text)
+  }
     return (
     <View style={styles.view}>
         
@@ -15,7 +39,7 @@ const HomeScreen = ({ navigation }) => {
         </View>
         
         <View>
-       <Text>NEAREST TRAINS GO HERE</Text>
+       <Text>{text}</Text>
     </View>
 
     <View>

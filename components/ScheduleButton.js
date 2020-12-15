@@ -7,10 +7,10 @@ const ScheduleButton = (props) => {
     return (
         <View>
             <TouchableOpacity>
-                <Button style={styles.buttonStyle} 
-                title={props.name} 
-                accessibilityLabel="Click here to go to the specific train schedule" 
-                onPress={() => navigation.navigate('Home')} />
+                <Button style={styles.buttonStyle}
+                    title={props.name}
+                    accessibilityLabel="Click here to go to the specific train schedule"
+                    onPress={() => navigation.navigate('Home')} />
             </TouchableOpacity>
         </View>
     )
@@ -24,6 +24,6 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         textTransform: "uppercase"
     }
-  });
+});
 
 export default ScheduleButton;

@@ -23,7 +23,7 @@ export default class Example extends PureComponent {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 0,
+    flex: 2,
     justifyContent: 'center',
     alignItems: 'center',
   },

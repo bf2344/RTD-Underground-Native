@@ -1,11 +1,17 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import ScheduleButton from '../components/ScheduleButton'
+import NavButtons from '../components/NavButtons'
+
 
 const Schedule = ({navigation}) => { 
+  
   const trainArray = ["G", "B", "N", "W", "L", "A", "C", "E", "H", "D", "F", "R"]
     return (
       <View style={styles.view}>
+         <TouchableOpacity onPress={() => navigation.push('Home')}>
+            <Image style={styles.image} source={require('../images/RTDU.png')} />
+        </TouchableOpacity>
         <Text>Schedule Page</Text>
         {/* <Button
         title="Go to Stats"
@@ -24,20 +30,7 @@ const Schedule = ({navigation}) => {
     })}
   </View>
 
-  <View style={styles.imageContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('Schedule')}>
-            <Image style={styles.image} source={require('../images/Schedules.png')} />
-            <Text style={styles.text}>Schedule</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.push('Home')}>
-            <Image style={styles.image} source={require('../images/Stations.png')} />
-            <Text style={styles.text}>Stations</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('Stats')}>
-            <Image style={styles.image} source={require('../images/Stats.png')} />
-            <Text style={styles.textStats}>Stats</Text>
-        </TouchableOpacity>
-        </View>
+ <NavButtons />
   
       </View>
     );

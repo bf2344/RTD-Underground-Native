@@ -17,8 +17,7 @@ const App = () => {
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
         <Stack.Screen name="Schedule" component={Schedule} options={{ title: 'Schedule' }} />
         <Stack.Screen name="Stats" component={Stats} options={{ title: 'Stats' }} />
-        <Stack.Screen name="ScheduleButtons" component={ScheduleButtons} options={{ title: 'ScheduleButtons' }} />
-
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';50
 
-const NavButtons = ({navigation}) => {
+const NavButtons = () => {
+    const navigation = useNavigation();
     return (
         <View style={styles.imageContainer}>
         <TouchableOpacity onPress={() => navigation.navigate('Schedule')}>
@@ -23,6 +25,7 @@ const NavButtons = ({navigation}) => {
 const styles = StyleSheet.create({
     imageContainer: {
         flexDirection: 'row',
+        flex: 1
     },
     image:{
         height: 75,

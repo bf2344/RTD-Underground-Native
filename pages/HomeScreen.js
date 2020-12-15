@@ -7,6 +7,7 @@ import NavButtons from '../components/NavButtons'
 const HomeScreen = ({ navigation }) => {
     return (
     <View style={styles.view}>
+        
         <View>
         <TouchableOpacity onPress={() => navigation.push('Home')}>
             <Image style={styles.image} source={require('../images/RTDU.png')} />
@@ -14,7 +15,7 @@ const HomeScreen = ({ navigation }) => {
         </View>
         
         <View>
-        {/* Container 1 */}
+       <Text>NEAREST TRAINS GO HERE</Text>
     </View>
 
     <View>
@@ -23,21 +24,8 @@ const HomeScreen = ({ navigation }) => {
     <Button title="Go to Schedule" onPress={() => navigation.navigate('Schedule')} />
     </View>
 
-    {/* <NavButtons /> */}
-    <View style={styles.imageContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('Schedule')}>
-            <Image style={styles.image} source={require('../images/Schedules.png')} />
-            <Text style={styles.text}>Schedule</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.push('Home')}>
-            <Image style={styles.image} source={require('../images/Stations.png')} />
-            <Text style={styles.text}>Stations</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('Stats')}>
-            <Image style={styles.image} source={require('../images/Stats.png')} />
-            <Text style={styles.textStats}>Stats</Text>
-        </TouchableOpacity>
-        </View>
+    <NavButtons />
+  
     
         <FooterTicker />
         
